@@ -18,15 +18,12 @@
     props: ['TogglePopup', 'indexx'],
     methods: {
       confirmDelete() {
-        console.log("questo è l'indice", this.indexx);
         this.$emit('confirm-delete', this.indexx);
         this.TogglePopup();
         
       },
       exit(){
-        console.log("esci da pop Up");
         this.TogglePopup();
-        console.log("dopo");
       }
     },
   };

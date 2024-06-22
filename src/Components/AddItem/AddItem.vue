@@ -157,8 +157,7 @@ export default {
           descrizione: this.descrizione,
           immagine: this.imageData,
         };
-        const response = await axios.post('http://localhost:3000/api/v1/negozio', newItem);
-        console.log('Nuovo articolo aggiunto:', response.data);
+         await axios.post('http://localhost:3000/api/v1/negozio', newItem);
         // Resetta i campi del form
         this.nome = '';
         this.prezzo = null;

@@ -80,7 +80,6 @@ export default {
     }
   },
   mounted() {
-    console.log("id", this.$router.currentRoute.value.params.id);
     var id = this.$router.currentRoute.value.params.id;
     this.getItemData(id);
 
@@ -111,7 +110,6 @@ export default {
           //url
           return `data:image/jpeg;base64,${this.model.item.immage}`;
         }  catch (error) {
-          console.error("Error decoding image:", error);
           return '';
         }
       }
@@ -134,7 +132,6 @@ export default {
     },
 
     getItemData(id){
-      console.log("dentro getItemData")
       axios.get(`http://localhost:3000/api/v1/negozio/${id}`)
       .then(res => {
           this.model.item.id=res.data.id;

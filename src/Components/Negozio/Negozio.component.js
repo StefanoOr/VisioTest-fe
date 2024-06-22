@@ -1,13 +1,11 @@
 import axios from 'axios';
 import 'primeicons/primeicons.css';
-import DeleteItemPopUp from '../DeleteItemPopUpComponent/DeleteItemPopUp.vue';
 import PopupComponent from '../PopUp/PopupComponent.vue';
 import { ref } from 'vue';
 
 export default {
   name: 'NegozioComponent',
   components: {
-    DeleteItemPopUp,
     PopupComponent
   },
   setup() {
@@ -52,13 +50,11 @@ export default {
       this.TogglePopup('buttonTrigger');
     },
     async confirmDelete(index) {
-      console.log("articolo in eliminazione id : ",index);
       try {
         await axios.delete(`http://localhost:3000/api/v1/negozio/delete/${index}`);
         this.data.splice(index, 1);
         this.getItem();
       } catch (error) {
-        console.error('Errore durante la richiesta di eliminazione:', error);
         this.$toast.error(`Errore imprevisto durante l'eliminazione: ${error.message}`);
       }
     },
