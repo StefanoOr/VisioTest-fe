@@ -18,26 +18,17 @@
         <textarea class="form-control" id="description" rows="3" v-model="model.item.description" required></textarea>
       </div>
 
-     <!--<div class="mb-3">
-        <label for="image" class="form-label">Immagine</label>
-        <div class="input-group">
-          <input type="file" class="form-control" id="image" @change="onFileChange">
-        </div>
-      </div>--> 
- 
       <div class="mb-3 my-custom-spacing">
         <button type="submit" class="btn btn-primary ">Aggiorna</button>
       </div>
     </form>
 
-    
     <div v-if="errorList" class="alert alert-danger" role="alert">
       {{ errorList }}
     </div>
     <div class="my-custom-spacing">
         <BackToHomeComponent/>
     </div>
-    
   </div>
 </template>
 

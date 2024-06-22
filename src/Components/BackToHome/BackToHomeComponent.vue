@@ -1,8 +1,5 @@
 <template>
-    <button
-      class="btn btn-secondary"
-      @click="goToHomePage"
-    >
+    <button class="btn btn-secondary" @click="goToHomePage">
       Torna alla Home
     </button>
   </template>

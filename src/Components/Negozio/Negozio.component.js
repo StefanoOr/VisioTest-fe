@@ -65,7 +65,7 @@ export default {
     TogglePopup(trigger) {
       this.popUpTriggers.value[trigger] = !this.popUpTriggers.value[trigger];
       if (!this.popUpTriggers.value[trigger]) {
-        this.currentIndex = null; // Resetta l'indice corrente se il popup viene chiuso
+        this.currentIndex = null; // Resetta l indice 
       }
     },
   },

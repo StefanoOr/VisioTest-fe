@@ -80,16 +80,14 @@ export default {
     }
   },
   mounted() {
-
     console.log("id", this.$router.currentRoute.value.params.id);
     var id = this.$router.currentRoute.value.params.id;
     this.getItemData(id);
-    //this.item = this.$router.currentRoute.value.state;
-    
+
   },
   methods: {
 
-    /*fetchItem() {
+    /* item prov fetchItem() {
       this.item = {
         name: 'Prodotto di esempio',
         description: 'Questa è una descrizione del prodotto di esempio',
@@ -100,12 +98,12 @@ export default {
     getImageUrl() {
       if (this.model.item.immage) {
         try {
-          // Decodifica la stringa base64 in un ArrayBuffer
+          // Decodifica  base64 
           const binaryData = atob(this.model.item.immage);
           const arrayBuffer = new ArrayBuffer(binaryData.length);
           const uint8Array = new Uint8Array(arrayBuffer);
     
-          //l'array di byte con i dati base64
+          //l array di byte con i dati base64
           for (let i = 0; i < binaryData.length; i++) {
             uint8Array[i] = binaryData.charCodeAt(i);
           }
@@ -147,7 +145,5 @@ export default {
       });
     }
   },
-
- 
 }
 </script>

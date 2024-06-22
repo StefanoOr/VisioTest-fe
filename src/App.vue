@@ -15,7 +15,7 @@ export default {
 
 <style>
   .my-custom-spacing {
-    margin-top: 32px; /* 32px */
+    margin-top: 32px; 
   }
 
 #app {
