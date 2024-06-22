@@ -1,20 +1,23 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
 
+
+<template>
+  <router-view/>
+</template>
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'primeicons/primeicons.css'
 
 export default {
+ 
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
+
 </script>
 
 <style>
+  .my-custom-spacing {
+    margin-top: 32px; /* 32px */
+  }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

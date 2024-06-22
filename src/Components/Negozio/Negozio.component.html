@@ -1,0 +1,39 @@
+<div>
+  <img class="logo" src="../assets/logoShopping.jpg" />
+  <h1>Negozio di Stefano</h1>
+  <button @click="$router.push('/addItem')" class="btn btn-primary">Aggiungi Articolo</button>
+
+  <table class="my-custom-spacing" v-if="data.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome Articolo <i class="fas fa-arrow-up"></i></th>
+        <th>Prezzo <i class="fas fa-arrow-down"></i></th>
+        <th>Descrizione</th>
+        <th>Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item, index) in data" :key="item.id">
+        <td>{{ item.id }}</td>
+        <td>{{ item.nome_articolo }}</td>
+        <td>{{ item.prezzo }}</td>
+        <td>{{ item.descrizione }}</td>
+        <td>
+          <i @click="$router.push({ name: 'viewitem', params: { id: item.id }, state: item.nome_articolo })" class="pi pi-search margin" style="color: green;"></i>
+          <i @click="() => deleteItem(item.id)" class="pi pi-times margin" style="color: red"></i>
+          <PopupComponent
+            v-if="popUpTriggers.buttonTrigger && currentIndex === item.id"
+            :TogglePopup="() => TogglePopup('buttonTrigger')"
+            :indexx="item.id"
+            @confirm-delete="confirmDelete(currentIndex)">
+            <h2>Sei sicuro di voler Eliminare l'articolo?</h2>
+          </PopupComponent>
+          <RouterLink :to="{ path: '/' + item.id + '/updateItem' }"><i class="pi pi-pencil margin"></i></RouterLink>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p v-else>Nessun Articolo è presente nel sistema. Inserisci un nuovo articolo!</p>
+</div>
